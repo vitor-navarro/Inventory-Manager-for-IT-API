@@ -1,7 +1,10 @@
 package com.example.manager.dto;
 
 import com.example.manager.entity.UserEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.v3.oas.annotations.Hidden;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -10,7 +13,9 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.BeanUtils;
 
+
 @Getter @Setter
+@Hidden
 public class UserCreateDTO {
     @JsonProperty("id")
     public Integer id;

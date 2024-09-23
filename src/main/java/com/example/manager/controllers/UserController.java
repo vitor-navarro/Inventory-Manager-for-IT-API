@@ -4,16 +4,17 @@ import com.example.manager.dto.UserCreateDTO;
 import com.example.manager.dto.UserDTO;
 import com.example.manager.entity.UserEntity;
 import com.example.manager.service.UserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import io.swagger.v3.oas.annotations.Operation;
-
 import java.util.List;
 
 @RestController
 @RequestMapping(path = "/users")
+@Tag(name = "Usuários", description = "UserController")
 public class UserController {
 
     @Autowired
@@ -37,7 +38,7 @@ public class UserController {
         return userService.countUsers();
     }
 
-    @Operation(summary = "Cria um usuário", description = "Cria um usuário no database, Não envie ID")
+    @Operation(summary = "Cria um usuário", description = "Cria um usuário no database, Não é necessário enviar ID")
     @PostMapping()
     @ResponseStatus(HttpStatus.CREATED)
     public UserEntity createUser(@Valid @RequestBody UserCreateDTO user){
