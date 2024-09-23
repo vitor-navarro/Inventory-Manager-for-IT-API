@@ -1,7 +1,6 @@
 package com.example.manager.controllers;
 
 import com.example.manager.dto.ItemDTO;
-import com.example.manager.dto.UserCreateDTO;
 import com.example.manager.entity.ItemEntity;
 import com.example.manager.service.ItemService;
 import jakarta.validation.Valid;

@@ -4,7 +4,9 @@ import com.example.manager.dto.ItemDTO;
 import com.example.manager.entity.ItemEntity;
 import com.example.manager.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ItemService {
 
     @Autowired
