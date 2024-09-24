@@ -1,9 +1,7 @@
 package com.example.manager.service;
 
 import com.example.manager.dto.ItemDTO;
-import com.example.manager.dto.UserDTO;
 import com.example.manager.entity.ItemEntity;
-import com.example.manager.entity.UserEntity;
 import com.example.manager.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -37,5 +35,20 @@ public class ItemService {
     public ItemEntity createItem(ItemDTO item){
         ItemEntity itemEntity = new ItemEntity(item);
         return itemRepository.save(itemEntity);
+    }
+
+    public ItemDTO updateItem(ItemDTO item){
+        ItemEntity itemEntity = itemRepository.findById(item.getId()).get();
+
+        itemEntity.setName(item.getName());
+        itemEntity.setDescription(item.getDescription());
+        itemEntity.setAmount(item.getAmount());
+        itemEntity.setStorageLocation(item.getStorageLocation());
+
+        return new ItemDTO(itemRepository.save(itemEntity));
+    }
+
+    public long countItens(){
+        return itemRepository.count();
     }
 }

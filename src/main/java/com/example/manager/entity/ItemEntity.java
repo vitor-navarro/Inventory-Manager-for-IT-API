@@ -27,7 +27,7 @@ public class ItemEntity {
     private Double amount;
 
     @Column()
-    private String StorageLocation;
+    private String storageLocation;
 
     public ItemEntity(){
 
@@ -57,7 +57,7 @@ public class ItemEntity {
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", amount=" + amount +
-                ", StorageLocation='" + StorageLocation + '\'' +
+                ", StorageLocation='" + storageLocation + '\'' +
                 '}';
     }
 }

@@ -30,8 +30,8 @@ public class ItemDTO {
     @NotNull
     private Double amount;
 
-    @JsonProperty("StorageLocation")
-    private String StorageLocation;
+    @JsonProperty("storageLocation")
+    private String storageLocation;
 
     public ItemDTO(){}
 

@@ -25,10 +25,19 @@ public class ItemController {
     public List<ItemDTO> getAllItens(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size){
         return itemService.getAllItens(page, size);
     }
+    @GetMapping("/count")
+    public long countItens(){
+        return itemService.countItens();
+    }
 
     @PostMapping("/")
     public ItemEntity createItem(@Valid @RequestBody ItemDTO item){
         return itemService.createItem(item);
+    }
+
+    @PostMapping("/updateItem")
+    public ItemDTO updateItem(@Valid @RequestBody ItemDTO item){
+        return itemService.updateItem(item);
     }
 
 }
